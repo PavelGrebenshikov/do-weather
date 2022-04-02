@@ -1,0 +1,16 @@
+   {% extends 'base.html' %}
+   {% block content %}
+   <div class="container">
+    {% for city in city_weather %}
+        <div class="weather">
+            <div class="name">{{ city.name }}</div>
+            <div class="country">Country: {{ city.country }}</div>
+            <div class="temp">Temperature: {{ city.temp }}</div>
+            <div class="desc">
+                <div class="text-desc">{{ city.weather_desc }}</div>
+                <div class="icon"><img src="http://openweathermap.org/img/w/{{ city.weather_icon }}.png"></div>
+            </div>
+        </div>
+     {% endfor %}
+    </div>
+   {% endblock content %}
